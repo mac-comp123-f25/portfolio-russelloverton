@@ -1,5 +1,7 @@
 def add_tax(price, tax_rate):
+    print("variables are", price, tax_rate)
     tax_amt = price * tax_rate
+    print("tax_amt", tax_amt)
     return price + tax_amt
 
 
