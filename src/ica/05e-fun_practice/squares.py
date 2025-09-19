@@ -9,8 +9,6 @@ def draw_nested_squares(turtle):
          turtle.forward(10 * (i+1))
          turtle.right(90)
 
-
-
 win = t.Screen()
 jerry = t.Turtle()
 jerry.speed(10)
