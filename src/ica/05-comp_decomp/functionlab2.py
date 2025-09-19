@@ -62,7 +62,7 @@ def stamp(x, y):
 
 def drawTurtle(radius, circles):
     angle = 360/circles
-    
+
     for _ in range(circles):
 
 
