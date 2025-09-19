@@ -60,13 +60,6 @@ def stamp(x, y):
     stampTurtle.down()
     stampTurtle.stamp()
 
-def drawTurtle(radius, circles):
-    angle = 360/circles
-
-    for _ in range(circles):
-
-
-
 move_sepal(0, 0)
 
 petal(0, 0)
