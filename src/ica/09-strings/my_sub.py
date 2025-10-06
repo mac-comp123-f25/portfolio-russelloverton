@@ -1,4 +1,4 @@
 def name_subst(name, text):
-    return text.replace("ZZZ", name)
+    return text.lower().replace("zzz", name)
 
-print(name_subst("not zzz", "ZZZ"))
+print(name_subst("not zzz", "zzz"))
