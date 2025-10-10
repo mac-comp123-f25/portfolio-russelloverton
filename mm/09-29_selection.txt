@@ -1,0 +1,12 @@
+selection in programs works by testing conditions and choosing among paths
+conditions are expressed with Boolean values (True or False) and Boolean expressions
+comparison operators (equal, not equal, <, >, ≤, ≥) produce Boolean values
+logical operators — and, or, not — let you combine or invert Boolean expressions
+precedence rules: comparisons bind more tightly than logical operators; not has higher precedence than and, and and higher than or
+conditional execution (selection) lets a program pick among alternatives based on a condition
+in a binary conditional, one branch runs if condition is true, the other runs if false
+you can omit the false branch (only do something when the condition is true) — unary selection
+you can nest conditionals to express multi-step decisions
+chained conditionals let you test several conditions in sequence, with a final default case if none matches
+Boolean functions return True or False; they encapsulate decision logic for use elsewhere
+key terms: block, branch, condition, conditional statement, logical operator, nested conditional, chained conditional
