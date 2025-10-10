@@ -1,0 +1,18 @@
+Chapter 20 is about unit testing, how to systematically check your code works. It emphasizes designing code
+so it’s easy to test, catching mistakes early, and using tools to help.
+Unit testing means writing small tests for “units” (functions or methods) to confirm they behave as specified.
+In developing code, you can use assert statements to check assumptions (for example, input must satisfy a precondition).
+These help detect errors early by failing fast.
+When testing functions, you pick sample inputs (including edge cases) and compare the output against expected results.
+Automated tests (using assert) let you rerun them whenever code changes. Tests themselves can have bugs, so you need to
+think carefully about test design.
+Designing testable functions means writing clear contracts (what the function takes, what it returns, what side effects
+it may have), minimizing hidden dependencies, and keeping functions small. This makes it easier to reason about them and
+to test them.
+Writing unit tests often uses specification-based testing, where tests are derived from the specification: for each
+case your spec mentions, write a test. A common approach is test-first development: you write tests before implementing
+the function logic. That forces you to think through behavior before coding.
+You can also use a testing framework like pytest to organize and run many tests. With pytest, each test is a function
+whose name begins with test_; when a test fails, pytest shows a report indicating which assertion failed and what the
+actual vs. expected values were.
+you might write something like assert myfunc(3) == 7 in a test to check that calling myfunc with 3 returns 7
