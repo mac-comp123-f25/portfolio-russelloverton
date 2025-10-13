@@ -1,0 +1,26 @@
+6.8 Using a Main Function
+Functions help modularize a program — break it into logical parts
+Many programs have a “main” part that sets up and invokes functionality
+It is good style to put that part in a function named main
+Then call main() at the bottom so the program runs
+Python’s special variable __name__ can be used to detect if a file is run directly vs imported
+If run directly, __name__ equals "__main__"
+If imported, __name__ is module’s name
+Thus using if __name__ == "__main__": main() ensures main only runs when file is executed directly
+6.9 Program Development
+As programs get larger, bugs (runtime, semantic) become more likely
+Incremental development is recommended: build and test in small pieces
+Use stubs (functions that return dummy values) early so code is syntactically valid
+Write simple tests first, then expand functionality step by step
+Use temporary / intermediate variables to break down complex expressions
+After correctness is achieved, code may be simplified, but not at the expense of readability
+Be careful with floating‑point comparisons / precision: differences may arise due to rounding
+6.10 Composition
+Composition means combining functions: output of one function used as input to another
+Enables construction of more complex logic from simpler functions
+Helps avoid duplication and keeps functionality modular
+6.11 A Turtle Bar Chart
+This section shows applying functions, composition, and modular design to building a bar chart (via turtle graphics)
+Use helper functions such as drawing individual bars, labeling, scaling, etc.
+The program design is broken into smaller tasks (draw bar, scaling, labeling) and composed into overall chart drawing
+It illustrates how functional decomposition works even for graphical output

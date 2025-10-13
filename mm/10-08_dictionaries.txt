@@ -1,0 +1,8 @@
+Chapter 10 introduces dictionaries, a data structure that maps keys to values. Unlike lists or tuples (which use integer indices), dictionaries let you use many immutable types (like strings or tuples) as keys.
+You can start with an empty dictionary and add entries by assignment (key mapped to value). You can remove entries using deletion. You can test membership with key presence. The len function returns how many key-value pairs are stored.
+Dictionaries support methods: you can get all keys, all values, or both (as key-value pairs). You can check whether a key exists.
+Because dictionaries are mutable, aliasing is possible: two variables can refer to the same dictionary, so changes via one name reflect via the other. To avoid that, you can make a copy (shallow copy) of the dictionary.
+A useful application is representing sparse data (for example, a matrix with many zero entries) by only storing non-zero entries in a dictionary keyed by coordinate pairs (row, column).
+Here’s a tiny illustrative line (not a block):
+you might write assert d['apple'] == 5 to check that the dictionary d maps the key 'apple' to the value 5
+Overall the chapter shows that dictionaries are powerful for associative lookup, more flexible indexing, and efficient sparse representations.
