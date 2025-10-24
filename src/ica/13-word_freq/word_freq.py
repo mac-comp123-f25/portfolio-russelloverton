@@ -14,8 +14,9 @@ def compute_frequencies(filename):
             dic[value] += 1
         else:
             dic[value] = 1
-    test_list = list(tuple(dic.items()))
-    print(test_list.sort())
+    test_val = (list(tuple(dic.items())))
+    test_val.sort()
+    print(test_val)
     return dic
 
 
