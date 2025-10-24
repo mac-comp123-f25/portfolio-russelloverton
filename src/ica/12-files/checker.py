@@ -6,4 +6,3 @@ def select_words(s, fn):
         for char in line:
             if char == "s"
                 i += 1
-                
