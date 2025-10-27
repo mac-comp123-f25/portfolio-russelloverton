@@ -35,6 +35,21 @@ def lookup_phone(name, direct_table):
 
     return "No entry: " + name
 
+def lookup_office(name, table):
+    for row in table:
+        if row['Name'] == name:
+            return row['OfficeNum']
+
+    return "No entry for " + name
+
+def lookup_by_date(month, day, table):
+    day = str(day)
+    for row in table:
+        if row['Month'] == month and row['Day'] == day:
+            return row
+
+    return "No entry for " + month + " " + str(day)
+
 
 def collect_by_building(building, table):
     """
@@ -47,6 +62,12 @@ def collect_by_building(building, table):
             match_list.append(row)
 
     return match_list
+
+def collect_by_letter(letter, table):
+    match_list = []
+    for row in table:
+        if row['Letter'] == letter:
+            match_list.append(row)
 
 
 def count_sunsets_before(hour_time, table):
@@ -64,6 +85,13 @@ def count_sunsets_before(hour_time, table):
 
     return count
 
+def select_by_month(month, table):
+    match_list = []
+    for row in table:
+        if row['Month'] == month:
+            match_list.append(row)
+
+
 
 def daylight_hours(rise_hour, rise_min, set_hour, set_min):
     """
@@ -76,6 +104,11 @@ def daylight_hours(rise_hour, rise_min, set_hour, set_min):
     hour_diff = minute_diff / 60
     return hour_diff
 
+def average_daylight_time(table):
+    time = []
+    for row in table:
+        time.append(daylight_hours(row['SunRiseHour'], row['SunRiseMin'], row['SunSetHour'], row['SunSetMin']))
+    return sum(time) / len(time)
 
 def main():
     print(lookup_phone('Fox, Susan', directory))
@@ -86,10 +119,10 @@ def main():
     print(sun_table[0])  # printing just the first row of data
     print_table(sun_table, field_names, 15)
 
-    # may15_data = lookup_by_date('May', 15, sun_table)
-    # print(may15_data)
-    # oct31_data = lookup_by_date('October', '31', sun_table)
-    # print(oct31_data)
+    may15_data = lookup_by_date('May', 15, sun_table)
+    print(may15_data)
+    oct31_data = lookup_by_date('October', '31', sun_table)
+    print(oct31_data)
 
     olri = collect_by_building('Olin-Rice', directory)
     print(olri)
