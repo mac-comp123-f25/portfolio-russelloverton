@@ -32,8 +32,11 @@ def get_state_living_wage(state, table):
     living wage table (a list of dictionaries), this looks up the given
     state's row dictionary, and returns the annual living wage for that state.
     """
-    # TODO: finish this function
-    pass
+    result = []
+    for row in table:
+        if row['State'] == state or row['StateAbbrev'] == state:
+            return row['AnnualLivingWage']
+    return result
 
 
 def get_low_wage_states(table):
@@ -133,13 +136,13 @@ def main():
     lw_fields, lw_data = read_living_wage_data('DataFiles/wages.csv')
     print_table(lw_data, lw_fields, 15)
 
-    # # Sample calls for get_state_living_wage
-    # ark_liv_wage = get_state_living_wage('Arkansas', lw_data)
-    # print("Arkansas living wage is", ark_liv_wage)
-    # cal_liv_wage = get_state_living_wage("CA", lw_data)
-    # print("California living wage is", cal_liv_wage)
-    # mn_liv_wage = get_state_living_wage("Minnesota", lw_data)
-    # print("Minnesota living wage is", mn_liv_wage)
+    # Sample calls for get_state_living_wage
+    ark_liv_wage = get_state_living_wage('Arkansas', lw_data)
+    print("Arkansas living wage is", ark_liv_wage)
+    cal_liv_wage = get_state_living_wage("CA", lw_data)
+    print("California living wage is", cal_liv_wage)
+    mn_liv_wage = get_state_living_wage("Minnesota", lw_data)
+    print("Minnesota living wage is", mn_liv_wage)
 
     # Sample calls for get_low_wage_states
     # low_wagers = get_low_wage_states(lw_data)
