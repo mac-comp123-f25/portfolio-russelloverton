@@ -46,8 +46,12 @@ def get_low_wage_states(table):
     wage of $7.25. It returns a new sunTable, a list, containing the row
     dictionaries
     """
-    # TODO: finish this function
-    pass
+    result = []
+    for row in table:
+        if row['HourlyMinimumWage'] == 7.25:
+            result.append(row)
+    return result
+
 
 
 def get_expensive_states(table):
@@ -56,8 +60,14 @@ def get_expensive_states(table):
     this finds the 5 states with the highest living wage. It returns a list
     of the five state names
     """
-    # TODO: finish this function
-    pass
+    result = {}
+    for row in table:
+        if result.len < 5:
+            result.update(row)
+        else:
+            if row['']
+    temp = dict(sorted(table.items(), key=lambda item: item[1], reverse=True))
+    return dict(list(temp.items())[:5])
 
 
 def annual_wage(hourly_wage):
@@ -145,9 +155,9 @@ def main():
     print("Minnesota living wage is", mn_liv_wage)
 
     # Sample calls for get_low_wage_states
-    # low_wagers = get_low_wage_states(lw_data)
-    # print("LOW WAGE STATES:")
-    # print_table(low_wagers, lw_fields, 15)
+    low_wagers = get_low_wage_states(lw_data)
+    print("LOW WAGE STATES:")
+    print_table(low_wagers, lw_fields, 15)
 
 
 if __name__ == '__main__':
