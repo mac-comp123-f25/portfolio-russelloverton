@@ -8,7 +8,7 @@ import math
 
 class Employee:
     """
-    For this simulation, we only focus on the gender of an employee, and on
+    For this simulation, we only focus on the gender of an employee and on
     whether this employee is likely to make negative statements
     towards the other gender.
     """
@@ -19,8 +19,24 @@ class Employee:
         saves those values to instance variables. It also initializes the
         variable that holds the comments received by this employee to zero.
         """
-        # TODO: Implement this method then remove this line
-        pass
+        self.gender = gender
+        self.will_comment = will_comment
+        self.comments_received = 0
+
+    def set_commenter_status(self, comment_status):
+        self.will_comment = comment_status
+
+    def receive_sexist_comment(self):
+        self.comments_received += 1
+
+    def get_gender(self):
+        return self.gender
+
+    def get_commenter_status(self):
+        return self.will_comment
+
+    def get_comments_received(self):
+        return self.comments_received
 
     def __str__(self):
         """
@@ -29,7 +45,9 @@ class Employee:
         return (self.gender.rjust(5)
                 + ": "
                 + str(self.comments_received)
-                + " sexist comments received")
+                + " sexist comments received."
+                + " Commenter Status: "
+                + str(self.will_comment))
 
 
 def print_employee_list(lst):
