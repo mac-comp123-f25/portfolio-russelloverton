@@ -5,6 +5,7 @@ Contains a simulation of the Petrie Multiplier that is based on classes.
 import random
 import math
 
+PCT_SEXIST = .2
 
 class Employee:
     """
@@ -55,8 +56,8 @@ def print_employee_list(lst):
     Given a list of employees, this method will print the details of each employee
     by using the print() method
     """
-    # TODO: Implement this function then remove this line
-    pass
+    for employee in lst:
+        print(employee)
 
 
 def create_employees(total_num):
@@ -64,17 +65,27 @@ def create_employees(total_num):
     Takes in the number of employees to make, builds and returns a list that contains
     that many employees. It ensures that ~80% are men and the rest women.
     """
-    # TODO: Implement this function then remove this line
-    pass
+    for i in range(total_num):
+        num_men = math.ceil(total_num * 0.8)
+        if i < num_men:
+            gender = 'Man'
+            num_men += 1
+        elif total_num > i >= num_men:
+            gender = 'Woman'
+        will_comment = False
+        employee = Employee(gender, will_comment)
+        lst.append(employee)
+    return lst
 
 
-def create_commenters(lst):
+def create_commenters(lst, PCT_SEXIST):
     """
     Given a list of employees, make 20% of each gender be sexist employees. This
     method should not return anything.
     """
     # TODO: Implement this function then remove this line
-    pass
+    for employee in lst:
+        employee.set_commenter_status(random.random() < PCT_SEXIST)
 
 
 def generate_comments(lst):
@@ -83,8 +94,22 @@ def generate_comments(lst):
     another employee of the opposite gender, chosen randomly. This method should
     not return anything
     """
-    # TODO: Implement this function then remove this line
-    pass
+    men = []
+    women = []
+    for employee in lst:
+        if employee.get_gender() == 'Man':
+            men.append(employee)
+        else:
+            women.append(employee)
+    for man in men:
+        if man.get_commenter_status():
+            woman = women[random.randint(0, len(women) - 1)]
+            woman.receive_sexist_comment()
+
+    for woman in women:
+        if woman.get_commenter_status():
+            man = men[random.randint(0, len(men) - 1)]
+            man.receive_sexist_comment()
 
 
 def average_comments(lst):
@@ -93,8 +118,19 @@ def average_comments(lst):
     respectively. Return statement will be in the form (<avg_for_men>, <avg_for_women>)
     """
     # TODO: Implement this function then remove this line
-    pass
+    men = 0
+    women = 0
+    men_comments_received = 0
+    women_comments_received = 0
+    for employee in lst:
+        if employee.get_gender() == 'Man':
+            men_comments_received += employee.get_comments_received()
+            men += 1
+        else:
+            women_comments_received += employee.get_comments_received()
+            women += 1
 
+    return (men_comments_received / men, women_comments_received / women)
 
 def main():
     """
@@ -105,7 +141,7 @@ def main():
     num_comment_rounds = 50
 
     employee_list = create_employees(num_employees_to_generate)
-    create_commenters(employee_list)
+    create_commenters(employee_list, PCT_SEXIST)
     for rounds in range(num_comment_rounds):
         generate_comments(employee_list)
 
@@ -127,7 +163,7 @@ if __name__ == "__main__":
     print_employee_list(employees)
 
     "<----- Test code for create_commenters ----->"
-    create_commenters(employees)
+    create_commenters(employees, PCT_SEXIST)
     print_employee_list(employees)
 
     "<----- Test code for generate_comments ----->"
@@ -138,4 +174,4 @@ if __name__ == "__main__":
     print(average_comments(employees))
 
     "<----- Run the simulation ----->"
-    # main()  # <-- KEEP THIS, Uncomment it after implementing all the functions
+    main()  # <-- KEEP THIS, Uncomment it after implementing all the functions
