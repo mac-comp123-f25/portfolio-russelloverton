@@ -3,10 +3,10 @@ import turtle
 
 
 def check_draw_tree(sz):
-    """Tester function for the draw_tree"""
+    """Test function for the draw_tree"""
 
     # setup window
-    win = tk.Toplevel()
+    win = tk.Tk()
     win.title(f"Tree Fractal {sz}")
     win_size = sz * 7
     cv = tk.Canvas(win, width=win_size, height=win_size)
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     # write tests below
     check_draw_tree(30)
     check_draw_tree(75)
-    check_draw_tree(125)
+    check_draw_tree(150)
 
     root.mainloop()
 
