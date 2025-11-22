@@ -1,0 +1,17 @@
+The accumulator pattern
+	the pattern of iterating the updating of a variable is commonly referred to as the accumulator pattern
+	the variable is the accumulator
+	must initialize variable before iteration starts
+
+Functions can call other functions
+	you can call functions from inside another function
+	breaking a problem into smaller subproblems is called functional decomposition
+	generalization is a cs problem solving technique
+	need to look for patterns in code
+	functions can simplify a program by hiding a complex computation behind a single command. this is abstraction
+	creating a new function can make the program smaller
+
+Flow of execution summary
+	flow of execution is the order in which statements are executed
+	execution goes top to bottom, and functions don't run until they're called
+	at end of program, it terminates

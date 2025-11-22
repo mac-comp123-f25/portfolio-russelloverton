@@ -1,0 +1,39 @@
+Chapter 3: Debugging Interlude 1
+
+know your error messages
+syntaxerror (or parseerror) means the code violates python's grammar rules
+typeerror occurs when an operation is attempted on an object that doesn't support it
+nameerror is raised when a program tries to use a variable that has not been defined
+valueerror happens when a function is given an argument of the correct type but an inappropriate value
+
+how to avoid debugging
+a primary strategy mentioned is incremental development, which involves writing and testing code in small, manageable pieces to catch errors early
+
+Chapter 4: Python Turtle Graphics
+
+hello little turtles!
+this chapter introduces the turtle module, a built-in python library for drawing graphics
+it uses a turtle object (the pen) which draws on a screen object (the canvas)
+the turtle has properties like position, heading, and color
+
+our first turtle program
+the first step is always to import turtle
+a program typically involves creating instances of the screen and turtle, like wn = turtle.Screen() and tess = turtle.Turtle()
+movement is controlled by methods like tess.forward() and tess.right()
+a
+iteration and instances
+multiple independent turtles, called instances, can be created
+the for loop is used for iteration (repeating actions), which simplifies drawing geometric shapes
+the range function is often used with a for loop to determine the exact number of repetitions
+
+Chapter 5: Python Modules
+
+modules and getting help
+a module is a file containing python code (definitions and statements) that can be imported and used in other scripts
+this allows for code reuse and better organization of large programs
+you load a module with the import statement
+
+common modules
+the math module provides access to mathematical functions and constants like math.pi and math.sqrt
+the random module provides functions for generating random numbers, such as random.randrange
+you can create your own modules by simply saving a python file with a .py extension
