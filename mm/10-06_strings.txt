@@ -1,0 +1,13 @@
+strings are a sequence type: you can think of them as collections of characters
+you can use the index operator to get a single character, and slicing to grab substrings
+strings support many methods (like .upper(), .find(), .replace()) that let you transform or query them
+you can compare strings lexicographically (alphabetical order) using comparison operators
+strings are immutable — once created, you can’t change their characters directly
+you can traverse a string in two ways: by character (for each char in s) or by index (for i in range(len(s)))
+the “in” and “not in” operators test whether a substring exists inside a string
+you can use the accumulator pattern with strings, e.g. to build up a new string character by character
+you often write functions like a “find” that searches a string for a substring, returning an index or a special value
+you may have optional parameters in string functions (default behaviors)
+character classification helps: e.g. checking if a char is a digit, letter, whitespace, using .isalpha(), .isdigit(), etc.
+example tiny code: assert s.find('a') == 3 checks that the find method returns 3 for substring 'a'
+key ideas: immutability, traversal, methods, substring testing, and composing string logic cleanly

@@ -1,4 +1,4 @@
 # scriptE.py
 
-strng = "apples"
+string = "apples" ## fixed typo
 print(string, string, string)

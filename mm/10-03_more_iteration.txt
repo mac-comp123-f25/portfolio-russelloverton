@@ -1,0 +1,9 @@
+Chapter 8 revisits iteration more deeply
+you get more with for loops (revisited) and with while loops
+you can do more interesting things like random walks, the 3n+1 sequence, and Newton’s method
+you see the accumulator pattern again in new contexts
+you learn use of sentinel values and validating input in loops
+the chapter also discusses building simple tables and 2D nested iteration (for example image processing)
+you see algorithms you already know in new light
+you might see something like for i in range(n): … used inside loops over rows and columns
+iteration becomes a very powerful tool when combined with nested loops and smart stopping conditions
